@@ -67,16 +67,34 @@ h2 {
 }
 h3{
 	font-family: 'Roboto Slab', sans-serif;
-	font-size: 22px;
+	font-size: 24px;
 	font-weight: 900;
 	margin-block: 1em;
 }
 
-p, li {
+li {
 	font-family: Roboto, sans-serif;
 	font-size: 16px;
 	line-height: 26px;
 }
+
+#titre{
+font-family: 'Roboto Slab', sans-serif;
+font-size: 30px;
+font-weight: 900;
+color: white;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+#sstitre{
+font-family: Roboto, sans-serif;
+font-size: 10px;
+font-weight: 100;
+color: white;
+}
+
 .container {
 	max-width: 1440px;
 	margin-inline:auto;
