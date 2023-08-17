@@ -23,7 +23,7 @@ slideshow.forEach((slideshow, indx) => {
 });
 
 let curSlide = 0;
-let maxSlide = slides.length - 1;
+let maxSlide = slideshowlength - 1;
 
 const nextSlide = document.querySelector(".arrowright");
 nextSlide.addEventListener("click", function () {
