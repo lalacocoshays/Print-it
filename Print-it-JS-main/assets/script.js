@@ -17,21 +17,36 @@ const slides = [
 	}
 ]
 
-let currentSlide= 0;
-let lastSlide = slides.length -1;
+const slideshow = document.querySelectorAll(".slides");
+slideshow.forEach((slideshow, indx) => {
+  slideshow.style.transform = `translateX(${indx * 100}%)`;
+});
 
-const prevSlide = document.querySelector(".arrow_left");
-prevSlide.addEventListener("click", ChangeSlide(-1));
+let curSlide = 0;
+let maxSlide = slides.length - 1;
 
-const nextSlide = document.querySelector(".arrow_right");
-nextSlide.addEventListener("click", ChangeSlide(1));
+const nextSlide = document.querySelector(".arrowright");
+nextSlide.addEventListener("click", function () {
+  if (curSlide === maxSlide) {
+    curSlide = 0;
+  } else {
+    curSlide++;
+  }
 
+  slides.forEach((slide, indx) => {
+    slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
+  });
+});
 
-function ChangeSlide (sens) {
-				currentSlide = currentSlide + sens;
-				if (currentSlide < 0)
-						currentSlide = slides.legnth -1;
-				if (currentSlide > slides.length -1)
-				currentSlide = 0;
-			document.getElementById("slides").src =slides[currentSlide];
-}
+const prevSlide = document.querySelector(".arrowleft");
+prevSlide.addEventListener("click", function () {
+  if (curSlide === 0) {
+    curSlide = maxSlide;
+  } else {
+    curSlide--;
+  }
+
+  slides.forEach((slide, indx) => {
+    slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
+  });
+});

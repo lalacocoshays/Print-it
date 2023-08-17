@@ -126,11 +126,11 @@ header {
 #banner .arrow {
 	position: relative;
 }
-#banner .arrow_left {
+#banner .arrowleft {
 	left: 10px;
 	position:absolute;
 }
-#banner .arrow_right {
+#banner .arrowright {
 	right: 10px;
 	position:absolute;
 }
