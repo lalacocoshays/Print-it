@@ -54,14 +54,13 @@ prevSlide.addEventListener("click", function () {
 const slider = slides[i];
 const dots = slider.querySelector(".dots");
 const sliderImgs = slider.querySelectorAll(".img");
-const allDots = dots.querySelectorAll(".dot")
-	for (let i = 0; i < slides.length; ++i) {
+const allDots = dots.querySelectorAll(".dot");
+	
+for (let i = 0; i < slides.length; ++i) {
 		const dot = document.createElement("div");
 		dot.classList.add("dot");
 		dots.appendChild(dot);
 	}
-
-	;
-	allDots[0].classList.add("active-dot");
+	allDots[0].classList.add("active-dot")
 
 
