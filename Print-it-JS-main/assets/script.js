@@ -46,8 +46,22 @@ prevSlide.addEventListener("click", function () {
   }
 
 	curImage.setAttribute("src","./assets/images/slideshow/"+slides[curSlide].image);
-
 	let curText = document.getElementById("titre");
 	curText.innerHTML= slides[curSlide].tagLine
-
 });
+
+
+const slider = slides[i];
+const dots = slider.querySelector(".dots");
+const sliderImgs = slider.querySelectorAll(".img");
+const allDots = dots.querySelectorAll(".dot")
+	for (let i = 0; i < slides.length; ++i) {
+		const dot = document.createElement("div");
+		dot.classList.add("dot");
+		dots.appendChild(dot);
+	}
+
+	;
+	allDots[0].classList.add("active-dot");
+
+
