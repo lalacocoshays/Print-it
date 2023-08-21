@@ -30,10 +30,10 @@ nextSlide.addEventListener("click", function () {
   }
 
 	curImage.setAttribute("src","./assets/images/slideshow/"+slides[curSlide].image);
-
 	let curText = document.getElementById("titre");
 	curText.innerHTML= slides[curSlide].tagLine
 
+	updateDots();
 });
 
 const prevSlide = document.querySelector(".arrowleft");
@@ -47,20 +47,25 @@ prevSlide.addEventListener("click", function () {
 
 	curImage.setAttribute("src","./assets/images/slideshow/"+slides[curSlide].image);
 	let curText = document.getElementById("titre");
-	curText.innerHTML= slides[curSlide].tagLine
+	curText.innerHTML= slides[curSlide].tagLine;
+	updateDots();
 });
 
 
-const slider = slides[i];
-const dots = slider.querySelector(".dots");
-const sliderImgs = slider.querySelectorAll(".img");
-const allDots = dots.querySelectorAll(".dot");
-	
+function updateDots(){
+const dots = document.querySelector(".dots");
+dots.innerHTML="";	
 for (let i = 0; i < slides.length; ++i) {
 		const dot = document.createElement("div");
 		dot.classList.add("dot");
+		
+		if (curSlide === i) {
+		dot.classList.add("dot_selected");
+		}
 		dots.appendChild(dot);
 	}
-	allDots[0].classList.add("active-dot")
 
+};
+
+updateDots();
 
