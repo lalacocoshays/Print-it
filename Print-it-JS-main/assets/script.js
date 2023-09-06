@@ -53,17 +53,17 @@ prevSlide.addEventListener("click", function () {
 
 
 function updateDots(){
-const dots = document.querySelector(".dots");
-dots.innerHTML="";	
-for (let i = 0; i < slides.length; ++i) {
-		const dot = document.createElement("div");
-		dot.classList.add("dot");
-		
-		if (curSlide === i) {
-		dot.classList.add("dot_selected");
+	const dots = document.querySelector(".dots");
+	dots.innerHTML="";	
+		for (let i = 0; i < slides.length; ++i) {
+				const dot = document.createElement("div");
+				dot.classList.add("dot");
+				
+				if (curSlide === i) {
+				dot.classList.add("dot_selected");
+				}
+				dots.appendChild(dot);
 		}
-		dots.appendChild(dot);
-	}
 
 };
 
